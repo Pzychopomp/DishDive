@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F49DA5A02BC7BC8F006C2100 /* DishDiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA59F2BC7BC8F006C2100 /* DishDiveApp.swift */; };
+		F49DA5A22BC7BC8F006C2100 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5A12BC7BC8F006C2100 /* ContentView.swift */; };
+		F49DA5A42BC7BC91006C2100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49DA5A32BC7BC91006C2100 /* Assets.xcassets */; };
+		F49DA5A82BC7BC91006C2100 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49DA5A72BC7BC91006C2100 /* Preview Assets.xcassets */; };
+		F49DA5B22BC7BC91006C2100 /* DishDiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5B12BC7BC91006C2100 /* DishDiveTests.swift */; };
+		F49DA5BC2BC7BC91006C2100 /* DishDiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5BB2BC7BC91006C2100 /* DishDiveUITests.swift */; };
+		F49DA5BE2BC7BC91006C2100 /* DishDiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5BD2BC7BC91006C2100 /* DishDiveUITestsLaunchTests.swift */; };
+		F49DA5CB2BC7C03E006C2100 /* AddRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5CA2BC7C03E006C2100 /* AddRecipe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F49DA5AE2BC7BC91006C2100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F49DA5942BC7BC8F006C2100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49DA59B2BC7BC8F006C2100;
+			remoteInfo = DishDive;
+		};
+		F49DA5B82BC7BC91006C2100 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F49DA5942BC7BC8F006C2100 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49DA59B2BC7BC8F006C2100;
+			remoteInfo = DishDive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F49DA59C2BC7BC8F006C2100 /* DishDive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishDive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49DA59F2BC7BC8F006C2100 /* DishDiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDiveApp.swift; sourceTree = "<group>"; };
+		F49DA5A12BC7BC8F006C2100 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F49DA5A32BC7BC91006C2100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F49DA5A52BC7BC91006C2100 /* DishDive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DishDive.entitlements; sourceTree = "<group>"; };
+		F49DA5A72BC7BC91006C2100 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F49DA5AD2BC7BC91006C2100 /* DishDiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishDiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49DA5B12BC7BC91006C2100 /* DishDiveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDiveTests.swift; sourceTree = "<group>"; };
+		F49DA5B72BC7BC91006C2100 /* DishDiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishDiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49DA5BB2BC7BC91006C2100 /* DishDiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDiveUITests.swift; sourceTree = "<group>"; };
+		F49DA5BD2BC7BC91006C2100 /* DishDiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F49DA5CA2BC7C03E006C2100 /* AddRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipe.swift; sourceTree = "<group>"; };
+		F49DA5CC2BC9589F006C2100 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F49DA5992BC7BC8F006C2100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5AA2BC7BC91006C2100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5B42BC7BC91006C2100 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F49DA5932BC7BC8F006C2100 = {
+			isa = PBXGroup;
+			children = (
+				F49DA5CC2BC9589F006C2100 /* README.md */,
+				F49DA59E2BC7BC8F006C2100 /* DishDive */,
+				F49DA5B02BC7BC91006C2100 /* DishDiveTests */,
+				F49DA5BA2BC7BC91006C2100 /* DishDiveUITests */,
+				F49DA59D2BC7BC8F006C2100 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F49DA59D2BC7BC8F006C2100 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F49DA59C2BC7BC8F006C2100 /* DishDive.app */,
+				F49DA5AD2BC7BC91006C2100 /* DishDiveTests.xctest */,
+				F49DA5B72BC7BC91006C2100 /* DishDiveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F49DA59E2BC7BC8F006C2100 /* DishDive */ = {
+			isa = PBXGroup;
+			children = (
+				F49DA59F2BC7BC8F006C2100 /* DishDiveApp.swift */,
+				F49DA5A12BC7BC8F006C2100 /* ContentView.swift */,
+				F49DA5CA2BC7C03E006C2100 /* AddRecipe.swift */,
+				F49DA5A32BC7BC91006C2100 /* Assets.xcassets */,
+				F49DA5A52BC7BC91006C2100 /* DishDive.entitlements */,
+				F49DA5A62BC7BC91006C2100 /* Preview Content */,
+			);
+			path = DishDive;
+			sourceTree = "<group>";
+		};
+		F49DA5A62BC7BC91006C2100 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F49DA5A72BC7BC91006C2100 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F49DA5B02BC7BC91006C2100 /* DishDiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				F49DA5B12BC7BC91006C2100 /* DishDiveTests.swift */,
+			);
+			path = DishDiveTests;
+			sourceTree = "<group>";
+		};
+		F49DA5BA2BC7BC91006C2100 /* DishDiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F49DA5BB2BC7BC91006C2100 /* DishDiveUITests.swift */,
+				F49DA5BD2BC7BC91006C2100 /* DishDiveUITestsLaunchTests.swift */,
+			);
+			path = DishDiveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F49DA59B2BC7BC8F006C2100 /* DishDive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49DA5C12BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDive" */;
+			buildPhases = (
+				F49DA5982BC7BC8F006C2100 /* Sources */,
+				F49DA5992BC7BC8F006C2100 /* Frameworks */,
+				F49DA59A2BC7BC8F006C2100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DishDive;
+			productName = DishDive;
+			productReference = F49DA59C2BC7BC8F006C2100 /* DishDive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F49DA5AC2BC7BC91006C2100 /* DishDiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49DA5C42BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDiveTests" */;
+			buildPhases = (
+				F49DA5A92BC7BC91006C2100 /* Sources */,
+				F49DA5AA2BC7BC91006C2100 /* Frameworks */,
+				F49DA5AB2BC7BC91006C2100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49DA5AF2BC7BC91006C2100 /* PBXTargetDependency */,
+			);
+			name = DishDiveTests;
+			productName = DishDiveTests;
+			productReference = F49DA5AD2BC7BC91006C2100 /* DishDiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F49DA5B62BC7BC91006C2100 /* DishDiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49DA5C72BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDiveUITests" */;
+			buildPhases = (
+				F49DA5B32BC7BC91006C2100 /* Sources */,
+				F49DA5B42BC7BC91006C2100 /* Frameworks */,
+				F49DA5B52BC7BC91006C2100 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49DA5B92BC7BC91006C2100 /* PBXTargetDependency */,
+			);
+			name = DishDiveUITests;
+			productName = DishDiveUITests;
+			productReference = F49DA5B72BC7BC91006C2100 /* DishDiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F49DA5942BC7BC8F006C2100 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					F49DA59B2BC7BC8F006C2100 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					F49DA5AC2BC7BC91006C2100 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = F49DA59B2BC7BC8F006C2100;
+					};
+					F49DA5B62BC7BC91006C2100 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = F49DA59B2BC7BC8F006C2100;
+					};
+				};
+			};
+			buildConfigurationList = F49DA5972BC7BC8F006C2100 /* Build configuration list for PBXProject "DishDive" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F49DA5932BC7BC8F006C2100;
+			productRefGroup = F49DA59D2BC7BC8F006C2100 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F49DA59B2BC7BC8F006C2100 /* DishDive */,
+				F49DA5AC2BC7BC91006C2100 /* DishDiveTests */,
+				F49DA5B62BC7BC91006C2100 /* DishDiveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F49DA59A2BC7BC8F006C2100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49DA5A82BC7BC91006C2100 /* Preview Assets.xcassets in Resources */,
+				F49DA5A42BC7BC91006C2100 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5AB2BC7BC91006C2100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5B52BC7BC91006C2100 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F49DA5982BC7BC8F006C2100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49DA5CB2BC7C03E006C2100 /* AddRecipe.swift in Sources */,
+				F49DA5A22BC7BC8F006C2100 /* ContentView.swift in Sources */,
+				F49DA5A02BC7BC8F006C2100 /* DishDiveApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5A92BC7BC91006C2100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49DA5B22BC7BC91006C2100 /* DishDiveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49DA5B32BC7BC91006C2100 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49DA5BE2BC7BC91006C2100 /* DishDiveUITestsLaunchTests.swift in Sources */,
+				F49DA5BC2BC7BC91006C2100 /* DishDiveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F49DA5AF2BC7BC91006C2100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49DA59B2BC7BC8F006C2100 /* DishDive */;
+			targetProxy = F49DA5AE2BC7BC91006C2100 /* PBXContainerItemProxy */;
+		};
+		F49DA5B92BC7BC91006C2100 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49DA59B2BC7BC8F006C2100 /* DishDive */;
+			targetProxy = F49DA5B82BC7BC91006C2100 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F49DA5BF2BC7BC91006C2100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F49DA5C02BC7BC91006C2100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		F49DA5C22BC7BC91006C2100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DishDive/DishDive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DishDive/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F49DA5C32BC7BC91006C2100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DishDive/DishDive.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DishDive/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F49DA5C52BC7BC91006C2100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishDive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DishDive";
+			};
+			name = Debug;
+		};
+		F49DA5C62BC7BC91006C2100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDiveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishDive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DishDive";
+			};
+			name = Release;
+		};
+		F49DA5C82BC7BC91006C2100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DishDive;
+			};
+			name = Debug;
+		};
+		F49DA5C92BC7BC91006C2100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = David.DishDiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DishDive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F49DA5972BC7BC8F006C2100 /* Build configuration list for PBXProject "DishDive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49DA5BF2BC7BC91006C2100 /* Debug */,
+				F49DA5C02BC7BC91006C2100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49DA5C12BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49DA5C22BC7BC91006C2100 /* Debug */,
+				F49DA5C32BC7BC91006C2100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49DA5C42BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49DA5C52BC7BC91006C2100 /* Debug */,
+				F49DA5C62BC7BC91006C2100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49DA5C72BC7BC91006C2100 /* Build configuration list for PBXNativeTarget "DishDiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49DA5C82BC7BC91006C2100 /* Debug */,
+				F49DA5C92BC7BC91006C2100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F49DA5942BC7BC8F006C2100 /* Project object */;
+}

@@ -36,5 +36,4 @@ To get started with contributing to DishDive, please follow these steps:
 
 ## Contact
 
-If you have any questions, suggestions, or feedback, feel free to reach out to any of the group members listed above. We are excited to collaborate with you on DishDive!
-
+If you have any questions, suggestions, or feedback, feel free to reach out to any of the group members listed above.
