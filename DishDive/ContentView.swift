@@ -13,13 +13,13 @@ struct ContentView: View {
             GeometryReader { _ in
                 VStack {
                     // Top row
-                    // TODO: Fix layout to fill top area
+                    // TODO: Fix layout to fill top area + find better font.
                     HStack {
                         Image("DishDive")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 100, height: 100)
-                        // TODO: Add code to display DISHDIVE with better font & Name to display as users name(maybe)
+                        // TODO: Add code to display DISHDIVE with way to display as users name(maybe)
                         VStack {
                             Text("DishDive")
                             Text("NAME")
@@ -47,7 +47,7 @@ struct ContentView: View {
                                 .background(Color.white)
                                 .cornerRadius(5)
                             ScrollView{
-                                
+                                // TODO: Link area to text file or database
                             }
                             Spacer()
                             Text("Share")
@@ -55,12 +55,12 @@ struct ContentView: View {
                         .padding()
                         .background(Color.gray)
                         .cornerRadius(5)
-                        // Distance between
-                        
+                        // Stuff inside big block
+                        // TODO: Fix layout of items inside block
                         VStack {
                             HStack{
                                 Text("Recipe:")
-                                Text("Input")
+                                Text("Output")
                             }
                             HStack{
                                 Text("Ingredients:")
