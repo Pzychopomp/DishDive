@@ -18,17 +18,18 @@ struct AddRecipe: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }
                     .padding(10) // Padding inside the link
-                    .frame(width: 100, height: 50) // Size of the clickable area
+                    .frame(width: 80, height: 50) // Size of the clickable area
                     .background(Color.gray) // Background color of the button
                     .cornerRadius(10) // Rounded corners
+                    Spacer().frame(width: 20)
                 }
                 VStack{
                     HStack{
                         Text("Recipe Name")
-                            .frame(width:130, height: 20)
+                            .frame(width:130, height: 40)
                         Spacer()
                         Text("Input")
-                            .frame(width:180, height: 20)
+                            .frame(width:180, height: 40)
                             .background(Color.indigo)
                             .cornerRadius(7)
                     }
@@ -50,7 +51,7 @@ struct AddRecipe: View {
                         ScrollView{
                             Text("Step 1")
                         }
-                        .frame(width:180, height: 400)
+                        .frame(width:180, height: 300)
                         .background(Color.indigo)
                         .cornerRadius(7)
                     }
