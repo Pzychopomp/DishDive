@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            GeometryReader { _ in
+            GeometryReader { geometry in
                 VStack {
                     // Top row
                     // TODO: Fix layout to fill top area + find better font.
@@ -22,17 +22,19 @@ struct ContentView: View {
                         // TODO: Add code to display DISHDIVE with way to display as users name(maybe)
                         VStack {
                             Text("DishDive")
+                                .font(.system(size: 22))
                             Text("NAME")
+                                .font(.system(size: 12))
                         }
                         Spacer()
                         // DONE: AddRecipe button
                         NavigationLink(destination: AddRecipe()) {
-                            Image(systemName: "plus.circle")
-                                .imageScale(.large)
-                                .foregroundColor(.black)
+                            Text("Add +")
+                                .bold()
+                                .frame(width: geometry.size.width * 0.15, height: geometry.size.width * 0.2)
                         }
                         .padding(10) // Padding inside the link
-                        .frame(width: 100, height: 50) // Size of the clickable area
+                        .frame(width: 150, height: 70) // Size of the clickable area
                         .background(Color.gray) // Background color of the button
                         .cornerRadius(10) // Rounded corners
                     }

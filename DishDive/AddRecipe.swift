@@ -53,6 +53,7 @@ struct AddRecipe: View {
                 Button("Done") {
                     self.presentationMode.wrappedValue.dismiss()
                 }
+                .bold()
                 .padding(10) // Padding inside the link
                 .frame(width: geometry.size.width/1.5, height: geometry.size.height/10, alignment: .center)
                 .background(Color.black) // Background color of the button
