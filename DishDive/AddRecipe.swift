@@ -5,11 +5,12 @@
 //  Created by David Nguyen on 4/10/24.
 //
 
+import PhotosUI
 import SwiftUI
 
 struct AddRecipe: View {
     @Environment(\.presentationMode) var presentationMode
-    
+
     // Example state properties for input fields
     @State private var recipeName = ""
     @State private var shortDescription = ""
@@ -17,11 +18,35 @@ struct AddRecipe: View {
     @State private var servingSize = ""
     @State private var ingredients = ""
     @State private var steps = ""
-    
+    @State private var image: UIImage? = nil
+
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
+                    // Image picker area
+                    // TODO: FIX IMAGE WILL DISMISS WHOLE VIEW
+                    NavigationLink(destination: AddImage(image: $image)) {
+                        ZStack {
+                            if let image = image {
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geometry.size.width - 40, height: 200)
+                                    .cornerRadius(10)
+                                    .clipped()
+                            } else {
+                                Rectangle()
+                                    .fill(Color.secondary.opacity(0.3))
+                                    .frame(width: geometry.size.width - 40, height: 200)
+                                    .cornerRadius(10)
+                                Text("Tap to select an image")
+                                    .foregroundColor(.white)
+                                    .bold()
+                            }
+                        }
+                    }
+
                     // Recipe Name
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Recipe Name")
@@ -31,7 +56,7 @@ struct AddRecipe: View {
                             .background(Color.white)
                             .cornerRadius(5)
                     }
-                    
+
                     // Short Description
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Short Description")
@@ -41,7 +66,7 @@ struct AddRecipe: View {
                             .background(Color.white)
                             .cornerRadius(5)
                     }
-                    
+
                     // Time to Cook + Serving Size
                     HStack(spacing: 20) {
                         VStack(alignment: .leading, spacing: 8) {
@@ -52,7 +77,7 @@ struct AddRecipe: View {
                                 .background(Color.white)
                                 .cornerRadius(5)
                         }
-                        
+
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Serving Size")
                             TextField("E.g., 4 servings", text: $servingSize)
@@ -62,7 +87,7 @@ struct AddRecipe: View {
                                 .cornerRadius(5)
                         }
                     }
-                    
+
                     // Ingredients
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Ingredients")
@@ -71,7 +96,7 @@ struct AddRecipe: View {
                             .background(Color.white)
                             .cornerRadius(5)
                     }
-                    
+
                     // Steps
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Steps")
@@ -80,9 +105,10 @@ struct AddRecipe: View {
                             .background(Color.white)
                             .cornerRadius(5)
                     }
-                    
+
                     // Done
                     Button("Done") {
+                        // TODO: Add code to add everything to Database
                         self.presentationMode.wrappedValue.dismiss()
                     }
                     .bold()
@@ -97,7 +123,7 @@ struct AddRecipe: View {
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
             .background(Color.gray)
             .cornerRadius(2)
+            .navigationBarTitle("Add Recipe", displayMode: .inline)
         }
     }
 }
-
