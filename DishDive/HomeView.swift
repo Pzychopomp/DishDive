@@ -9,41 +9,88 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        GeometryReader { geometry in
-            NavigationView {
-                VStack {
-                    // Top row
-                    // TODO: Fix layout to fill top area + find better font.
-                    HStack {
-                        Image("DishDive")
+        VStack {
+            HStack {
+                Spacer()
+                HStack(spacing: 20) {
+                    // Plus Button
+                    NavigationLink(destination: AddRecipe()) {
+                        Image(systemName: "plus")
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100)
-                        Spacer()
-                        // DONE: AddRecipe button
-                        NavigationLink(destination: AddRecipe()) {
-                            Text("Add RECIPE")
-                                .bold()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+                            .padding(10) // Padding inside the button
+                            .frame(width: 50, height: 30) // Size of the button
+                            .cornerRadius(10) // Rounded corners
+                    }
+
+                    // Search Button
+                    Button(action: {
+                        // TODO: Code to filter by name
+                        // Action to perform when the search button is tapped
+                    }) {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+                            .padding(10) // Padding inside the button
+                            .frame(width: 50, height: 30) // Size of the button
+                            .cornerRadius(10) // Rounded corners
+                    }
+                    .padding(.trailing, 10)
+                }
+            }
+            // New TabView inside HomeView
+            TabView {
+                Text("Dishes").tabItem {
+                    Text("American")
+                        .fontWeight(.bold)
+                }
+                .font(.title)
+                .fontWeight(.bold)
+                .frame(alignment: .center)
+                .padding()
+                Text("Dishes").tabItem {
+                    Text("Asian")
+                        .fontWeight(.bold)
+                }
+                .font(.title)
+                .fontWeight(.bold)
+                .frame(alignment: .center)
+                .padding()
+                Text("Dishes").tabItem {
+                    Text("Mexican")
+                        .fontWeight(.bold)
+                }
+                .font(.title)
+                .fontWeight(.bold)
+                .frame(alignment: .center)
+                .padding()
+            }
+            .frame(height: 70)
+
+            // Existing content of HomeView
+            GeometryReader { _ in
+                NavigationView {
+                    VStack {
+                        // Code for list and feed below
+                        ScrollView {
+                            // TODO: Content for Images from db + make ImageView
                         }
-                        .padding(10) // Padding inside the link
-                        .frame(width: 150, height: 70) // Size of the clickable area
-                        .background(Color.gray) // Background color of the button
-                        .cornerRadius(10) // Rounded corners
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(2)
                     }
-                    // Code for list and feed below
-                    ScrollView {
-                        // Your content here
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding()
-                    .background(Color.gray)
-                    .cornerRadius(1)
                 }
             }
         }
+
+        // No Touch
         .tabItem {
             Label("Home", systemImage: "house")
-                .padding(.horizontal) // Add padding to center the label
         }
     }
 }
