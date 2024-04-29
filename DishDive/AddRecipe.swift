@@ -13,6 +13,7 @@ struct AddRecipe: View {
 
     // Example state properties for input fields
     @State private var recipeName = ""
+    @State private var regionSelection: Region? = nil
     @State private var shortDescription = ""
     @State private var cookingTime = ""
     @State private var servingSize = ""
@@ -20,12 +21,19 @@ struct AddRecipe: View {
     @State private var steps = ""
     @State private var image: UIImage? = nil
 
+    enum Region: String, CaseIterable, Identifiable {
+        case american = "American"
+        case asian = "Asian"
+        case mexican = "Mexican"
+
+        var id: String { self.rawValue }
+    }
+
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
                     // Image picker area
-                    // TODO: FIX IMAGE WILL DISMISS WHOLE VIEW
                     NavigationLink(destination: AddImage(image: $image)) {
                         ZStack {
                             if let image = image {
@@ -57,6 +65,21 @@ struct AddRecipe: View {
                             .cornerRadius(5)
                     }
 
+                    // Region Selection
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Region")
+                        Picker("Region", selection: $regionSelection) {
+                            Text("Select a region").tag(nil as Region?)
+                            ForEach(Region.allCases) { region in
+                                Text(region.rawValue).tag(region as Region?)
+                            }
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        .frame(width: geometry.size.width / 1.2)
+                        .background(Color.white)
+                        .cornerRadius(5)
+                    }
+
                     // Short Description
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Short Description")
@@ -77,14 +100,14 @@ struct AddRecipe: View {
                                 .background(Color.white)
                                 .cornerRadius(5)
                         }
-
+                        // TODO: Test numberPad
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Serving Size")
-                            TextField("E.g., 4 servings", text: $servingSize)
+                            TextField("E.g., 4", text: $servingSize)
                                 .textFieldStyle(.roundedBorder)
+                                .keyboardType(.numberPad)
                                 .frame(width: geometry.size.width / 2.6)
                                 .background(Color.white)
-                                .cornerRadius(5)
                         }
                     }
 
