@@ -11,6 +11,9 @@
 		F407A8072BDE119F00B082EE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A8062BDE119E00B082EE /* ProfileView.swift */; };
 		F407A8092BDE124400B082EE /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A8082BDE124400B082EE /* FavoriteView.swift */; };
 		F407A80B2BDF04C300B082EE /* AddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F407A80A2BDF04C300B082EE /* AddImage.swift */; };
+		F41F731A2BE0457D00BC29C1 /* RecipePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41F73192BE0457D00BC29C1 /* RecipePreview.swift */; };
+		F4472C2F2BE05A1F006F1C35 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = F4472C2E2BE05A1F006F1C35 /* URLImage */; };
+		F4472C312BE05A1F006F1C35 /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = F4472C302BE05A1F006F1C35 /* URLImageStore */; };
 		F49DA5A02BC7BC8F006C2100 /* DishDiveApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA59F2BC7BC8F006C2100 /* DishDiveApp.swift */; };
 		F49DA5A22BC7BC8F006C2100 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49DA5A12BC7BC8F006C2100 /* ContentView.swift */; };
 		F49DA5A42BC7BC91006C2100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49DA5A32BC7BC91006C2100 /* Assets.xcassets */; };
@@ -43,6 +46,7 @@
 		F407A8062BDE119E00B082EE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F407A8082BDE124400B082EE /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		F407A80A2BDF04C300B082EE /* AddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImage.swift; sourceTree = "<group>"; };
+		F41F73192BE0457D00BC29C1 /* RecipePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePreview.swift; sourceTree = "<group>"; };
 		F49DA59C2BC7BC8F006C2100 /* DishDive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishDive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49DA59F2BC7BC8F006C2100 /* DishDiveApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishDiveApp.swift; sourceTree = "<group>"; };
 		F49DA5A12BC7BC8F006C2100 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4472C312BE05A1F006F1C35 /* URLImageStore in Frameworks */,
+				F4472C2F2BE05A1F006F1C35 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +119,7 @@
 				F49DA5CA2BC7C03E006C2100 /* AddRecipe.swift */,
 				F407A80A2BDF04C300B082EE /* AddImage.swift */,
 				F49DA5A32BC7BC91006C2100 /* Assets.xcassets */,
+				F41F73192BE0457D00BC29C1 /* RecipePreview.swift */,
 				F407A8082BDE124400B082EE /* FavoriteView.swift */,
 				F407A8042BDE0CDB00B082EE /* HomeView.swift */,
 				F49DA5A52BC7BC91006C2100 /* DishDive.entitlements */,
@@ -162,6 +169,10 @@
 			dependencies = (
 			);
 			name = DishDive;
+			packageProductDependencies = (
+				F4472C2E2BE05A1F006F1C35 /* URLImage */,
+				F4472C302BE05A1F006F1C35 /* URLImageStore */,
+			);
 			productName = DishDive;
 			productReference = F49DA59C2BC7BC8F006C2100 /* DishDive.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +245,9 @@
 				Base,
 			);
 			mainGroup = F49DA5932BC7BC8F006C2100;
+			packageReferences = (
+				F4472C2D2BE05A1F006F1C35 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = F49DA59D2BC7BC8F006C2100 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41F731A2BE0457D00BC29C1 /* RecipePreview.swift in Sources */,
 				F49DA5CB2BC7C03E006C2100 /* AddRecipe.swift in Sources */,
 				F407A8052BDE0CDB00B082EE /* HomeView.swift in Sources */,
 				F407A8072BDE119F00B082EE /* ProfileView.swift in Sources */,
@@ -631,6 +646,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4472C2D2BE05A1F006F1C35 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4472C2E2BE05A1F006F1C35 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4472C2D2BE05A1F006F1C35 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		F4472C302BE05A1F006F1C35 /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4472C2D2BE05A1F006F1C35 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F49DA5942BC7BC8F006C2100 /* Project object */;
 }

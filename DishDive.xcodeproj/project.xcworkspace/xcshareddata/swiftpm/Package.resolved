@@ -1,0 +1,15 @@
+{
+  "originHash" : "6d6b251587bcba2fd70a82a953d5657f696265f150f14239d0d1ce05d820b0c9",
+  "pins" : [
+    {
+      "identity" : "url-image",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dmytro-anokhin/url-image",
+      "state" : {
+        "revision" : "4042f955f1fdff00ced85545e1eecdbf969b5cd0",
+        "version" : "3.1.1"
+      }
+    }
+  ],
+  "version" : 3
+}

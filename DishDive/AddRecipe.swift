@@ -144,7 +144,7 @@ struct AddRecipe: View {
                 .padding()
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            .background(Color.gray)
+            .background(Color("off-white"))
             .cornerRadius(2)
             .navigationBarTitle("Add Recipe", displayMode: .inline)
         }

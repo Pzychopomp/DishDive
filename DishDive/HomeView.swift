@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var viewModel = RecipeViewModel()
+    // Placeholder, deleter when back-end done
+
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         VStack {
             HStack {
@@ -27,7 +31,7 @@ struct HomeView: View {
 
                     // Search Button
                     Button(action: {
-                        // TODO: Code to filter by name
+                        // TODO: Code to filter by name (no time???)
                         // Action to perform when the search button is tapped
                     }) {
                         Image(systemName: "magnifyingglass")
@@ -75,19 +79,23 @@ struct HomeView: View {
             GeometryReader { _ in
                 NavigationView {
                     VStack {
-                        // Code for list and feed below
+                        // Code for feed below
                         ScrollView {
-                            // TODO: Content for Images from db + make ImageView
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach(viewModel.recipes, id: \.id) { recipe in
+                                    RecipeBoxView(recipe: recipe)
+                                }
+                            }
+                            .padding()
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .padding()
-                        .background(Color.gray)
-                        .cornerRadius(2)
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding()
+                    .background(Color("off-white"))
+                    .cornerRadius(2)
                 }
             }
         }
-
         // No Touch
         .tabItem {
             Label("Home", systemImage: "house")
