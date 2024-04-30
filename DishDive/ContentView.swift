@@ -17,7 +17,7 @@ struct ContentView: View {
                     .tag(0)
                 HomeView()
                     .tag(1)
-                FavoritesView()
+                FavoritesView(viewModel: RecipeViewModel())
                     .tag(2)
             }
         }

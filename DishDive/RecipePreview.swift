@@ -10,7 +10,7 @@ import URLImage
 import Combine
 
 // Data model to be used by db and to check
-struct Recipe {
+struct Recipe: Identifiable{
     var id = UUID()
     var name: String
     var picURL: String // Change the type to URL
@@ -34,8 +34,8 @@ struct RecipeBoxView: View {
                     AsyncImage(url: url) { image in
                         image
                             .resizable()
-                            .scaledToFit()
-                            .frame(width: 100, height: 100) // Square frame
+                            .scaledToFill()
+                            .frame(width: 150, height: 150) // Square frame
                             .cornerRadius(10)
                     } placeholder: {
                         ProgressView()

@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct FavoritesView: View {
+    @ObservedObject var viewModel: RecipeViewModel
+    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
-        Text("Favorites View")
-            .tabItem {
-                Label("Favorites", systemImage: "heart")
+        NavigationView {
+            VStack {
+                Text("Favorites") // Title for the favorites page
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        // Populate with favorited items
+                        ForEach(viewModel.recipes.filter { $0.isFavorite }) { recipe in
+                            RecipeBoxView(recipe: recipe)
+                                .padding()
+                        }
+                    }
+                }
             }
+            .navigationBarHidden(true) // Hide the navigation bar added by NavigationView
+        }
+        .tabItem {
+            Label("Favorites", systemImage: "heart")
+        }
     }
 }
-
