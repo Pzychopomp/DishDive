@@ -11,10 +11,11 @@ import Combine
 
 // Data model to be used by db and to check
 struct Recipe: Identifiable{
-    var id = UUID()
+    var id: UUID
     var name: String
-    var picURL: String // Change the type to URL
+    var picURL: String
     var isFavorite: Bool
+    var accountID: UUID //Foreign Key to link w/ account
 }
 
 // Item View
@@ -76,11 +77,11 @@ class RecipeViewModel: ObservableObject {
         // This example uses static data
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             // Example using URLImage to load images from URLs
-            //TODO: Change to use data from Mongo
+            //TODO: Change to use data from MongoDB/FireBase
             self.recipes = [
-                Recipe(name: "Cupcake", picURL: String("https://sugarspunrun.com/wp-content/uploads/2022/04/Best-Chocolate-Cupcakes-1-of-1.jpg"), isFavorite: false),
-                Recipe(name: "Pizza", picURL: String("https://media.istockphoto.com/id/1377372234/photo/pizza-with-salami-bell-pepper-tomatoes-and-cheese-pickles-bacon-and-sausages-on-a-light.jpg?s=1024x1024&w=is&k=20&c=w42_pOFEXNNtcZ9iF0dPYXfXzuXOcKOLfWmItCnzRAg="), isFavorite: true),
-                Recipe(name: "Burger", picURL: String("https://t4.ftcdn.net/jpg/02/74/99/01/360_F_274990113_ffVRBygLkLCZAATF9lWymzE6bItMVuH1.jpg"), isFavorite: false)
+                Recipe(id: UUID(), name: "Cupcake", picURL: String("https://sugarspunrun.com/wp-content/uploads/2022/04/Best-Chocolate-Cupcakes-1-of-1.jpg"), isFavorite: false, accountID: UUID()),
+                Recipe(id: UUID(), name: "Pizza", picURL: String("https://media.istockphoto.com/id/1377372234/photo/pizza-with-salami-bell-pepper-tomatoes-and-cheese-pickles-bacon-and-sausages-on-a-light.jpg?s=1024x1024&w=is&k=20&c=w42_pOFEXNNtcZ9iF0dPYXfXzuXOcKOLfWmItCnzRAg="), isFavorite: true, accountID: UUID()),
+                Recipe(id: UUID(), name: "Burger", picURL: String("https://t4.ftcdn.net/jpg/02/74/99/01/360_F_274990113_ffVRBygLkLCZAATF9lWymzE6bItMVuH1.jpg"), isFavorite: false, accountID: UUID())
             ]
         }
     }

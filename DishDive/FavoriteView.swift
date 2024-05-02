@@ -27,8 +27,13 @@ struct FavoritesView: View {
                         }
                     }
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
+                .background(Color("off-white"))
+                .cornerRadius(2)
             }
             .navigationBarHidden(true) // Hide the navigation bar added by NavigationView
+            
         }
         .tabItem {
             Label("Favorites", systemImage: "heart")
