@@ -26,24 +26,24 @@ struct RegisterView: View {
                 .padding()
                 .autocapitalization(.none)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .background(Color("off-white"))
+                .background(Color("white"))
 
             TextField("Email", text: $email)
                 .padding()
                 .autocapitalization(.none)
                 .keyboardType(.emailAddress)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .background(Color("off-white"))
+                .background(Color("white"))
 
             SecureField("Password", text: $password)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .background(Color("off-white"))
+                .background(Color("white"))
 
             SecureField("Confirm Password", text: $confirmPassword)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .background(Color("off-white"))
+                .background(Color("white"))
 
             if let errorMessage = registrationErrorMessage {
                 Text(errorMessage)

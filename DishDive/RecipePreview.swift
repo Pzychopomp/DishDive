@@ -7,56 +7,42 @@
 
 import SwiftUI
 import URLImage
-import Combine
+import FirebaseFirestore
 
-// Data model to be used by db and to check
-struct Recipe: Identifiable{
-    var id: UUID
-    var name: String
-    var picURL: String
+struct Recipe: Identifiable {
+    var id: String
+    var recipeName: String
+    var imageURL: String
     var isFavorite: Bool
-    var accountID: UUID //Foreign Key to link w/ account
+    var accountID: String
 }
+
+
 
 // Item View
 struct RecipeBoxView: View {
     var recipe: Recipe
-    @State private var isFavorite: Bool
-
-    init(recipe: Recipe) {
-        self.recipe = recipe
-        _isFavorite = State(initialValue: recipe.isFavorite)
-    }
 
     var body: some View {
         VStack {
-            ZStack(alignment: .topTrailing) {
-                if let url = URL(string: recipe.picURL) {
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 150, height: 150) // Square frame
-                            .cornerRadius(10)
-                    } placeholder: {
-                        ProgressView()
-                            .progressViewStyle(CircularProgressViewStyle())
-                    }
-                } else {
-                    // Handle invalid URL
-                    Text("Invalid URL")
+            if let url = URL(string: recipe.imageURL) {
+                URLImage(url) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 150, height: 150)
+                        .cornerRadius(10)
+                        .clipped()
                 }
-
-                Button(action: {
-                    isFavorite.toggle()
-                }) {
-                    Image(systemName: isFavorite ? "heart.fill" : "heart")
-                        .foregroundColor(isFavorite ? .red : .gray)
-                        .padding([.top, .trailing], 10)
-                }
+            } else {
+                Rectangle()
+                    .fill(Color.secondary.opacity(0.3))
+                    .frame(width: 150, height: 150)
+                    .cornerRadius(10)
+                Text("Invalid URL")
             }
-
-            Text(recipe.name) // Display the name
+            
+            Text(recipe.recipeName)
                 .font(.caption)
         }
     }
@@ -67,22 +53,28 @@ struct RecipeBoxView: View {
 // RecipeViewModel to fetch and manage recipe data
 class RecipeViewModel: ObservableObject {
     @Published var recipes: [Recipe] = []
+    private var db = Firestore.firestore()
 
-    init() {
-        loadItems()
-    }
-
-    func loadItems() {
-        // Your data fetching logic here
-        // This example uses static data
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            // Example using URLImage to load images from URLs
-            //TODO: Change to use data from MongoDB/FireBase
-            self.recipes = [
-                Recipe(id: UUID(), name: "Cupcake", picURL: String("https://sugarspunrun.com/wp-content/uploads/2022/04/Best-Chocolate-Cupcakes-1-of-1.jpg"), isFavorite: false, accountID: UUID()),
-                Recipe(id: UUID(), name: "Pizza", picURL: String("https://media.istockphoto.com/id/1377372234/photo/pizza-with-salami-bell-pepper-tomatoes-and-cheese-pickles-bacon-and-sausages-on-a-light.jpg?s=1024x1024&w=is&k=20&c=w42_pOFEXNNtcZ9iF0dPYXfXzuXOcKOLfWmItCnzRAg="), isFavorite: true, accountID: UUID()),
-                Recipe(id: UUID(), name: "Burger", picURL: String("https://t4.ftcdn.net/jpg/02/74/99/01/360_F_274990113_ffVRBygLkLCZAATF9lWymzE6bItMVuH1.jpg"), isFavorite: false, accountID: UUID())
-            ]
+    func loadRecipesFromFirestore() {
+        db.collection("recipes").getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error getting recipes: \(error)")
+                return
+            }
+            guard let documents = snapshot?.documents else {
+                print("No documents in 'recipes' collection")
+                return
+            }
+            self.recipes = documents.map { doc -> Recipe in
+                let data = doc.data()
+                let id = doc.documentID
+                let recipeName = data["recipeName"] as? String ?? ""
+                let imageURL = data["imageURL"] as? String ?? ""
+                let isFavorite = data["isFavorite"] as? Bool ?? false
+                let accountID = data["accountID"] as? String ?? ""
+                
+                return Recipe(id: id, recipeName: recipeName, imageURL: imageURL, isFavorite: isFavorite, accountID: accountID)
+            }
         }
     }
 }

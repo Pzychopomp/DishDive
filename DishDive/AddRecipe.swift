@@ -1,17 +1,9 @@
-//
-//  AddRecipe.swift
-//  DishDive
-//
-//  Created by David Nguyen on 4/10/24.
-//
-
-import PhotosUI
 import SwiftUI
+import FirebaseFirestore
 
 struct AddRecipe: View {
     @Environment(\.presentationMode) var presentationMode
 
-    // Example state properties for input fields
     @State private var recipeName = ""
     @State private var regionSelection: Region? = nil
     @State private var shortDescription = ""
@@ -19,7 +11,7 @@ struct AddRecipe: View {
     @State private var servingSize = ""
     @State private var ingredients = ""
     @State private var steps = ""
-    @State private var image: UIImage? = nil
+    @State private var imageURL = ""
 
     enum Region: String, CaseIterable, Identifiable {
         case american = "American"
@@ -33,26 +25,14 @@ struct AddRecipe: View {
         GeometryReader { geometry in
             ScrollView {
                 VStack {
-                    // Image picker area
-                    NavigationLink(destination: AddImage(image: $image)) {
-                        ZStack {
-                            if let image = image {
-                                Image(uiImage: image)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: geometry.size.width - 40, height: 200)
-                                    .cornerRadius(10)
-                                    .clipped()
-                            } else {
-                                Rectangle()
-                                    .fill(Color.secondary.opacity(0.3))
-                                    .frame(width: geometry.size.width - 40, height: 200)
-                                    .cornerRadius(10)
-                                Text("Tap to select an image")
-                                    .foregroundColor(.white)
-                                    .bold()
-                            }
-                        }
+                    // Image URL input
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Image URL")
+                        TextField("Enter image URL", text: $imageURL)
+                            .textFieldStyle(.roundedBorder)
+                            .frame(width: geometry.size.width / 1.2)
+                            .background(Color.white)
+                            .cornerRadius(5)
                     }
 
                     // Recipe Name
@@ -100,7 +80,6 @@ struct AddRecipe: View {
                                 .background(Color.white)
                                 .cornerRadius(5)
                         }
-                        // TODO: Test numberPad
                         VStack(alignment: .leading, spacing: 8) {
                             Text("Serving Size")
                             TextField("E.g., 4", text: $servingSize)
@@ -131,7 +110,7 @@ struct AddRecipe: View {
 
                     // Done
                     Button("Done") {
-                        // TODO: Add code to add everything to Database
+                        addRecipeToFirestore()
                         self.presentationMode.wrappedValue.dismiss()
                     }
                     .bold()
@@ -144,9 +123,31 @@ struct AddRecipe: View {
                 .padding()
             }
             .frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
-            .background(Color("off-white"))
+            .background(Color("white"))
             .cornerRadius(2)
             .navigationBarTitle("Add Recipe", displayMode: .inline)
+        }
+    }
+
+    private func addRecipeToFirestore() {
+        let db = Firestore.firestore()
+        let recipeData: [String: Any] = [
+            "recipeName": recipeName,
+            "region": regionSelection?.rawValue ?? "Unknown",
+            "shortDescription": shortDescription,
+            "cookingTime": cookingTime,
+            "servingSize": servingSize,
+            "ingredients": ingredients,
+            "steps": steps,
+            "imageURL": imageURL
+        ]
+        
+        db.collection("recipes").addDocument(data: recipeData) { error in
+            if let error = error {
+                print("Error adding document: \(error)")
+            } else {
+                print("Document added successfully!")
+            }
         }
     }
 }

@@ -1,10 +1,3 @@
-//
-//  ProfileView.swift
-//  DishDive
-//
-//  Created by David Nguyen on 4/27/24.
-//
-
 import SwiftUI
 import Firebase
 
@@ -36,23 +29,48 @@ class AccountViewModel: ObservableObject {
             self.account = fetchedAccount
         }
     }
+
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            self.account = nil  // Optionally reset account data
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
 }
 
 struct ProfileView: View {
     @StateObject var viewModel = AccountViewModel()
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
             HStack(spacing: 20) {
-                NavigationLink(destination: LoginView()) {
-                    Text("Login")
-                        .foregroundColor(.white)  // Ensure text color contrasts well with the light blue background
-                        .padding(10)  // Comfortable padding inside the button
+                if viewModel.account != nil {
+                    Button(action: {
+                        viewModel.signOut()
+                        presentationMode.wrappedValue.dismiss()  // This line can adjust depending on your navigation structure
+                    }) {
+                        Text("Sign Out")
+                            .foregroundColor(.white)
+                            .padding(10)
+                    }
+                    .frame(width: 80, height: 40)
+                    .background(Color.red)
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
+                } else {
+                    NavigationLink(destination: LoginView()) {
+                        Text("Login")
+                            .foregroundColor(.white)
+                            .padding(10)
+                    }
+                    .frame(width: 80, height: 40)
+                    .background(Color(red: 0.67, green: 0.84, blue: 0.90))
+                    .cornerRadius(10)
+                    .shadow(radius: 2)
                 }
-                .frame(width: 80, height: 40)  // Define a standard button size
-                .background(Color(red: 0.67, green: 0.84, blue: 0.90))  // Specific light blue color
-                .cornerRadius(10)  // Moderately rounded corners for a soft but traditional button look
-                .shadow(radius: 2)  // Optional: adds a slight shadow for depth
             }
             
             Text("Profile")
@@ -89,11 +107,10 @@ struct ProfileView: View {
                             .padding()
                     }
                     .frame(maxWidth: .infinity)
-                    .background(Color("off-white"))
+                    .background(Color("white"))
                     .cornerRadius(5)
                 }
             } else {
-                // Optional: Add text or another view to handle the case where there is no account data yet
                 Text("No profile data available.")
                     .foregroundColor(.gray)
             }
@@ -103,8 +120,8 @@ struct ProfileView: View {
             viewModel.fetchAccount()
         }
         .tabItem {
-                    Label("Profile", systemImage: "person.fill")  // Ensure this name is correctly typed
-                }
+            Label("Profile", systemImage: "person.fill")
+        }
     }
 }
 

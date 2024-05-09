@@ -1,42 +1,29 @@
-//
-//  FavoriteView.swift
-//  DishDive
-//
-//  Created by David Nguyen on 4/27/24.
-//
-
 import SwiftUI
+import MapKit
 
 struct FavoritesView: View {
-    @ObservedObject var viewModel: RecipeViewModel
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 33.7175, longitude: -117.8311), // Coordinates for Orange County
+        span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+    )
+    
     var body: some View {
         NavigationView {
             VStack {
-                Text("Favorites") // Title for the favorites page
+                Text("Map of Orange County") // Updated title for the map page
                     .font(.title)
                     .fontWeight(.bold)
                     .padding()
 
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        // Populate with favorited items
-                        ForEach(viewModel.recipes.filter { $0.isFavorite }) { recipe in
-                            RecipeBoxView(recipe: recipe)
-                                .padding()
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding()
-                .background(Color("off-white"))
-                .cornerRadius(2)
+                Map(coordinateRegion: $region)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .cornerRadius(10)
+                    .padding()
             }
-            .navigationBarHidden(true) // Hide the navigation bar added by NavigationView
-            
+            .navigationBarHidden(true)
         }
         .tabItem {
-            Label("Favorites", systemImage: "heart")
+            Label("Map", systemImage: "map")
         }
     }
 }
