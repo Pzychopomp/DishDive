@@ -34,6 +34,18 @@ struct ProfileView: View {
 
     var body: some View {
         VStack {
+            HStack(spacing: 20) {
+                // Plus Button
+                NavigationLink(destination: LoginView()) {
+                    Text("Login")
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.black)
+                        .padding(10) // Padding inside the button
+                }
+                    .background(Color("off-white"))
+                    .frame(width: 80, height: 100) // Size of the button
+                    .cornerRadius(5)
+            }
             Text("Profile") // Title for the favorites page
                 .font(.title)
                 .fontWeight(.bold)
@@ -91,4 +103,8 @@ struct ProfileView: View {
             Label("Profile", systemImage: "person")
         }
     }
+}
+
+#Preview {
+    ProfileView()
 }
