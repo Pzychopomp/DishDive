@@ -18,7 +18,7 @@ Our main idea is to create an iOS app called "DishDive" where users can store, d
 
 ### Expectations
 
-At this stage(4/29/2024), our team has almost finished the home screen. We have made it so items can populate the feed with a preview of the picture and the name. The next step is to add a page where upon clicking the preview, it will load all the details of the recipe such as the region, ingredients, and directions in addition to the preview data. Afterwards, creation of the profile page will be made along with the favorites apge
+At this stage(5/10/2024), our team has everything we wanted to do within this timeframe implemented. We have made it so items can populate the feed with a preview of the picture and the name. We have also created a profile page along with pages for registration and login.
 
 ### Workflow
 
